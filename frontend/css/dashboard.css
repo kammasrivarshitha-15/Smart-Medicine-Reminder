@@ -1,0 +1,664 @@
+
+/* =========================================
+   MEDREMINDER - DASHBOARD CSS
+========================================= */
+
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f8ff;
+    color: #142d50;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    width: 268px;
+    height: 100vh;
+    padding: 24px 16px;
+    background: #ffffff;
+    border-right: 1px solid #e4ebf4;
+    overflow-y: auto;
+}
+
+.sidebar-logo {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 44px;
+    padding: 0 14px;
+    color: #1674d1;
+    font-size: 23px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    width: 100%;
+    min-height: 52px;
+    padding: 13px 18px;
+    border-radius: 11px;
+    color: #58718e;
+    font-size: 15px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.nav-item:hover {
+    background: #edf6ff;
+    color: #1674d1;
+}
+
+.nav-item.active {
+    background: #e2f1ff;
+    color: #0874d1;
+    font-weight: 600;
+}
+
+.sidebar-bottom {
+    width: 100%;
+    margin-top: auto;
+    padding-top: 20px;
+}
+
+#logoutBtn:hover {
+    background: #fff0f0;
+    color: #c62835;
+}
+
+/* ===== MAIN CONTENT ===== */
+.main-content {
+    display: block;
+    width: calc(100% - 268px);
+    min-width: 0;
+    min-height: 100vh;
+    margin-left: 268px;
+    padding: 32px 40px 45px;
+    background: #f4f8ff;
+}
+
+/* ===== DASHBOARD HEADER ===== */
+.dashboard-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.dashboard-header h1 {
+    margin-bottom: 5px;
+    color: #142d50;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.35;
+}
+
+.dashboard-header p {
+    color: #7289a4;
+    font-size: 15px;
+}
+
+.profile-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: #dceeff;
+    color: #1265c5;
+    font-size: 19px;
+    font-weight: 700;
+}
+
+/* ===== STATISTICS CARDS ===== */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 32px;
+}
+
+.stat-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    min-width: 0;
+    min-height: 120px;
+    padding: 22px 18px;
+    background: #ffffff;
+    border: 1px solid #edf1f7;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(38, 76, 120, 0.05);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(38, 76, 120, 0.09);
+}
+
+.stat-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 13px;
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.stat-icon.blue {
+    background: #e1efff;
+    color: #1976d2;
+}
+
+.stat-icon.green {
+    background: #e0f7e9;
+    color: #219653;
+}
+
+.stat-icon.orange {
+    background: #fff0dc;
+    color: #e88a16;
+}
+
+.stat-icon.red {
+    background: #ffe6e8;
+    color: #d64550;
+}
+
+.stat-card h3 {
+    margin-bottom: 3px;
+    color: #142d50;
+    font-size: 27px;
+    line-height: 1.3;
+}
+
+.stat-card p {
+    color: #7289a4;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* ===== TODAY'S MEDICINES SECTION ===== */
+.medicine-section {
+    width: 100%;
+    min-width: 0;
+    margin-bottom: 28px;
+    padding: 25px;
+    background: #ffffff;
+    border: 1px solid #edf1f7;
+    border-radius: 17px;
+    box-shadow: 0 6px 20px rgba(38, 76, 120, 0.04);
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 22px;
+}
+
+.section-header h2 {
+    margin-bottom: 4px;
+    color: #142d50;
+    font-size: 22px;
+    line-height: 1.4;
+}
+
+.section-header p {
+    color: #7289a4;
+    font-size: 14px;
+}
+
+.add-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 10px 17px;
+    border-radius: 9px;
+    background: #1976d2;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.add-btn:hover {
+    background: #125fb0;
+    transform: translateY(-1px);
+}
+
+/* ===== MEDICINE LIST ===== */
+#dashboardMedicineList {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 18px;
+    width: 100%;
+    min-width: 0;
+}
+
+#dashboardMedicineList > * {
+    min-width: 0;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+}
+
+/* Support common medicine card class names */
+#dashboardMedicineList .medicine-card,
+#dashboardMedicineList .medicine-item,
+#dashboardMedicineList .dashboard-medicine-card,
+#dashboardMedicineList .medicine-row {
+    width: 100%;
+    min-width: 0;
+    padding: 20px;
+    background: #f9fbff;
+    border: 1px solid #e5edf7;
+    border-radius: 13px;
+    overflow-wrap: anywhere;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#dashboardMedicineList .medicine-card:hover,
+#dashboardMedicineList .medicine-item:hover,
+#dashboardMedicineList .dashboard-medicine-card:hover,
+#dashboardMedicineList .medicine-row:hover {
+    border-color: #c9def5;
+    box-shadow: 0 5px 15px rgba(38, 76, 120, 0.05);
+}
+
+#dashboardMedicineList h3 {
+    margin-bottom: 10px;
+    color: #145bd7;
+    font-size: 18px;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+#dashboardMedicineList p {
+    margin-bottom: 7px;
+    color: #536b87;
+    font-size: 14px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+/* Medicine action buttons */
+#dashboardMedicineList button {
+    min-height: 38px;
+    margin: 8px 8px 0 0;
+    padding: 9px 13px;
+    border: none;
+    border-radius: 8px;
+    background: #e1efff;
+    color: #1265c5;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+#dashboardMedicineList button:hover {
+    background: #cce4ff;
+    transform: translateY(-1px);
+}
+
+#dashboardMedicineList button:focus-visible,
+#enableNotificationsBtn:focus-visible,
+.add-btn:focus-visible,
+.nav-item:focus-visible {
+    outline: 3px solid #83bfff;
+    outline-offset: 3px;
+}
+
+/* Status labels, if these classes are used by JavaScript */
+#dashboardMedicineList .upcoming,
+#dashboardMedicineList .taken,
+#dashboardMedicineList .missed {
+    display: inline-block;
+    margin-top: 6px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+#dashboardMedicineList .upcoming {
+    background: #fff0dc;
+    color: #a75f00;
+}
+
+#dashboardMedicineList .taken {
+    background: #e0f7e9;
+    color: #187943;
+}
+
+#dashboardMedicineList .missed {
+    background: #ffe6e8;
+    color: #c62835;
+}
+
+/* ===== NEXT REMINDER ===== */
+.reminder-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    width: 100%;
+    padding: 24px;
+    background: #ffffff;
+    border: 1px solid #e3edf9;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(38, 76, 120, 0.04);
+}
+
+.reminder-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 13px;
+    background: #e1efff;
+    font-size: 23px;
+}
+
+.reminder-box > div:last-child {
+    flex: 1;
+    min-width: 0;
+}
+
+.reminder-box h3 {
+    margin-bottom: 5px;
+    color: #142d50;
+    font-size: 19px;
+}
+
+.reminder-box p {
+    color: #7289a4;
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+#enableNotificationsBtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    margin-top: 14px;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 9px;
+    background: #1976d2;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+#enableNotificationsBtn:hover {
+    background: #125fb0;
+    transform: translateY(-1px);
+}
+
+#enableNotificationsBtn:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+    transform: none;
+}
+
+#notificationStatus {
+    margin-top: 9px;
+    font-size: 13px;
+}
+
+/* ===== TABLET ===== */
+@media (max-width: 1150px) {
+    .sidebar {
+        width: 230px;
+    }
+
+    .main-content {
+        width: calc(100% - 230px);
+        margin-left: 230px;
+        padding: 28px 24px 35px;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    #dashboardMedicineList {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 700px) {
+    .sidebar {
+        position: relative;
+        top: auto;
+        left: auto;
+        bottom: auto;
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        padding: 18px;
+        overflow: visible;
+    }
+
+    .sidebar-logo {
+        margin-bottom: 18px;
+        padding: 0 8px;
+        font-size: 21px;
+    }
+
+    .sidebar-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+    .nav-item {
+        width: auto;
+        min-height: 40px;
+        padding: 9px 11px;
+        gap: 7px;
+        font-size: 13px;
+    }
+
+    .sidebar-bottom {
+        margin-top: 10px;
+        padding-top: 0;
+    }
+
+    .main-content {
+        width: 100%;
+        min-height: 0;
+        margin-left: 0;
+        padding: 24px 16px 30px;
+    }
+
+    .dashboard-header {
+        margin-bottom: 23px;
+    }
+
+    .dashboard-header h1 {
+        font-size: 25px;
+    }
+
+    .dashboard-header p {
+        font-size: 13px;
+    }
+
+    .profile-circle {
+        width: 40px;
+        height: 40px;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        margin-bottom: 22px;
+    }
+
+    .stat-card {
+        gap: 10px;
+        min-height: 100px;
+        padding: 14px 11px;
+    }
+
+    .stat-icon {
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
+        font-size: 19px;
+    }
+
+    .stat-card h3 {
+        font-size: 23px;
+    }
+
+    .stat-card p {
+        font-size: 11px;
+    }
+
+    .medicine-section {
+        margin-bottom: 20px;
+        padding: 18px;
+    }
+
+    .section-header {
+        align-items: flex-start;
+        margin-bottom: 17px;
+    }
+
+    .section-header h2 {
+        font-size: 19px;
+    }
+
+    .section-header p {
+        font-size: 12px;
+    }
+
+    .add-btn {
+        min-height: 38px;
+        padding: 9px 12px;
+        font-size: 12px;
+    }
+
+    #dashboardMedicineList {
+        grid-template-columns: 1fr;
+        gap: 13px;
+    }
+
+    #dashboardMedicineList .medicine-card,
+    #dashboardMedicineList .medicine-item,
+    #dashboardMedicineList .dashboard-medicine-card,
+    #dashboardMedicineList .medicine-row {
+        padding: 16px;
+    }
+
+    .reminder-box {
+        gap: 12px;
+        padding: 18px;
+    }
+
+    .reminder-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 19px;
+    }
+
+    .reminder-box h3 {
+        font-size: 17px;
+    }
+
+    .reminder-box p {
+        font-size: 13px;
+    }
+
+    #enableNotificationsBtn {
+        font-size: 12px;
+    }
+}
+
+/* ===== VERY SMALL SCREENS ===== */
+@media (max-width: 380px) {
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-header h1 {
+        font-size: 22px;
+    }
+
+    .section-header {
+        flex-direction: column;
+    }
+
+    .reminder-box {
+        flex-direction: column;
+    }
+}

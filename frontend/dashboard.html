@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - MedReminder</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            💊 <span>MedReminder</span>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="nav-item active">🏠 <span>Dashboard</span></a>
+            <a href="medicines.html" class="nav-item">💊 <span>My Medicines</span></a>
+            <a href="add-medicine.html" class="nav-item">➕ <span>Add Medicine</span></a>
+            <a href="history.html" class="nav-item">📋 <span>History</span></a>
+            <a href="profile.html" class="nav-item">👤 <span>Profile</span></a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="index.html" class="nav-item" id="logoutBtn">🚪 <span>Logout</span></a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="dashboard-header">
+            <div>
+                <h1>Welcome! 👋</h1>
+                <p>Here's your medication schedule for today.</p>
+            </div>
+            <div class="profile-circle">U</div>
+        </header>
+
+        <section class="stats">
+
+            <div class="stat-card">
+                <div class="stat-icon blue">💊</div>
+                <div>
+                    <h3>0</h3>
+                    <p>Total Medicines</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon green">✓</div>
+                <div>
+                    <h3>0</h3>
+                    <p>Taken Today</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon orange">⏰</div>
+                <div>
+                    <h3>0</h3>
+                    <p>Upcoming</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon red">!</div>
+                <div>
+                    <h3>0</h3>
+                    <p>Missed</p>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="medicine-section">
+
+            <div class="section-header">
+                <div>
+                    <h2>Today's Medicines</h2>
+                    <p id="todayDate"></p>
+                </div>
+
+                <a href="add-medicine.html" class="add-btn">
+                    + Add Medicine
+                </a>
+            </div>
+
+            <div id="dashboardMedicineList"></div>
+
+        </section>
+
+        <section class="reminder-box">
+            <div class="reminder-icon">🔔</div>
+            <div>
+                <h3>Next Reminder</h3>
+                <p id="nextReminderText">Loading reminders...</p>
+
+                <button id="enableNotificationsBtn" type="button">
+                    🔔 Enable Notifications
+                </button>
+
+                <p id="notificationStatus" role="status"></p>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="js/dashboard.js"></script>
+
+</body>
+</html>

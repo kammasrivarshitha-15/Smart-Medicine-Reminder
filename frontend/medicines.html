@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Medicines - MedReminder</title>
+    <link rel="stylesheet" href="css/medicines.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <span class="logo-icon">💊</span>
+            <span>MedReminder</span>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="nav-item">
+                <span class="nav-icon">🏠</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="medicines.html" class="nav-item active">
+                <span class="nav-icon">💊</span>
+                <span>My Medicines</span>
+            </a>
+
+            <a href="add-medicine.html" class="nav-item">
+                <span class="nav-icon">➕</span>
+                <span>Add Medicine</span>
+            </a>
+
+            <a href="history.html" class="nav-item">
+                <span class="nav-icon">📋</span>
+                <span>History</span>
+            </a>
+
+            <a href="profile.html" class="nav-item">
+                <span class="nav-icon">👤</span>
+                <span>Profile</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="index.html" class="nav-item logout">
+                <span class="nav-icon">🚪</span>
+                <span>Logout</span>
+            </a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="page-header">
+            <div>
+                <h1>My Medicines</h1>
+                <p>View and manage all your medicines.</p>
+            </div>
+        </header>
+
+        <section class="medicine-section">
+            <div id="medicineList" class="medicine-list"></div>
+
+            <div id="emptyMessage" class="empty-message">
+                <div class="empty-icon">💊</div>
+                <h2>No Medicines Added</h2>
+                <p>You haven't added any medicines yet.</p>
+                <a href="add-medicine.html" class="empty-add-btn">
+                    Add Your First Medicine
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/medicines.js"></script>
+</body>
+</html>

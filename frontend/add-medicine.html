@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Add Medicine - MedReminder</title>
+
+    <link rel="stylesheet" href="css/medicine.css">
+</head>
+
+<body>
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            💊 <span>MedReminder</span>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html" class="nav-item">
+                🏠
+                <span>Dashboard</span>
+            </a>
+
+            <a href="medicines.html" class="nav-item">
+                💊
+                <span>My Medicines</span>
+            </a>
+
+            <a href="add-medicine.html" class="nav-item active">
+                ➕
+                <span>Add Medicine</span>
+            </a>
+
+            <a href="history.html" class="nav-item">
+                📋
+                <span>History</span>
+            </a>
+
+            <a href="profile.html" class="nav-item">
+                👤
+                <span>Profile</span>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <a href="index.html" class="nav-item">
+                🚪
+                <span>Logout</span>
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="main-content">
+
+        <div class="page-header">
+
+            <div>
+                <h1>Add New Medicine</h1>
+
+                <p>
+                    Enter the details of your medicine below.
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- ================= MEDICINE FORM ================= -->
+
+        <div class="medicine-form-card">
+
+            <form id="medicineForm">
+
+
+                <!-- Medicine Name -->
+
+                <div class="form-group">
+
+                    <label for="medicineName">
+                        Medicine Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="medicineName"
+                        placeholder="Example: Paracetamol"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Dosage -->
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="dosage">
+                            Dosage
+                        </label>
+
+                        <input
+                            type="text"
+                            id="dosage"
+                            placeholder="Example: 500 mg"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Time -->
+
+                    <div class="form-group">
+
+                        <label for="time">
+                            Reminder Time
+                        </label>
+
+                        <input
+                            type="time"
+                            id="time"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- Frequency -->
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="frequency">
+                            Frequency
+                        </label>
+
+                        <select id="frequency" required>
+
+                            <option value="">
+                                Select frequency
+                            </option>
+
+                            <option value="Once Daily">
+                                Once Daily
+                            </option>
+
+                            <option value="Twice Daily">
+                                Twice Daily
+                            </option>
+
+                            <option value="Three Times Daily">
+                                Three Times Daily
+                            </option>
+
+                            <option value="Every 4 Hours">
+                                Every 4 Hours
+                            </option>
+
+                            <option value="Every 6 Hours">
+                                Every 6 Hours
+                            </option>
+
+                            <option value="Every 8 Hours">
+                                Every 8 Hours
+                            </option>
+
+                            <option value="As Needed">
+                                As Needed
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Food Timing -->
+
+                    <div class="form-group">
+
+                        <label for="foodTiming">
+                            Food Timing
+                        </label>
+
+                        <select id="foodTiming" required>
+
+                            <option value="">
+                                Select timing
+                            </option>
+
+                            <option value="Before Food">
+                                Before Food
+                            </option>
+
+                            <option value="After Food">
+                                After Food
+                            </option>
+
+                            <option value="With Food">
+                                With Food
+                            </option>
+
+                            <option value="Any Time">
+                                Any Time
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Start Date -->
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="startDate">
+                            Start Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="startDate"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- End Date -->
+
+                    <div class="form-group">
+
+                        <label for="endDate">
+                            End Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="endDate"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- Notes -->
+
+                <div class="form-group">
+
+                    <label for="notes">
+                        Notes
+                    </label>
+
+                    <textarea
+                        id="notes"
+                        rows="4"
+                        placeholder="Any additional instructions..."
+                    ></textarea>
+
+                </div>
+
+
+                <!-- Buttons -->
+
+                <div class="form-actions">
+
+                    <a
+                        href="dashboard.html"
+                        class="cancel-btn"
+                    >
+                        Cancel
+                    </a>
+
+                    <button
+                        type="submit"
+                        class="save-btn"
+                    >
+                        💾 Save Medicine
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </main>
+
+
+    <script src="js/medicine.js"></script>
+
+</body>
+
+</html>
